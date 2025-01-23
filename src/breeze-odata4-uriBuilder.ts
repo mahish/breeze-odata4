@@ -280,7 +280,7 @@ export class OData4UriBuilder implements UriBuilder {
         return option.name;
       }
 
-      return `${option.name}(${subOptions.join(';')})`;
+      return `${option.name}(${subOptions.join(encodeURIComponent(';'))})`;
     });
 
     const result = expandStrings.length ? `${key}=${expandStrings}` : null;
